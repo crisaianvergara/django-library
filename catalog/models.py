@@ -128,22 +128,6 @@ class Author(models.Model):
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     date_of_birth = models.DateField(null=True, blank=True)
-<<<<<<< Tabnine <<<<<<<
-def __str__(self):#+
-    """#+
-    Returns a string representation of the model object.#+
-#+
-    This method is used to display the object in a human-readable format in the Django admin interface,#+
-    and in other places where the object is converted to a string.#+
-#+
-    Parameters:#+
-    None#+
-#+
-    Returns:#+
-    str: A string representation of the model object. In this case, it returns the 'name' attribute of the object.#+
-    """#+
-    return self.name#+
->>>>>>> Tabnine >>>>>>>
     date_of_death = models.DateField('Died', null=True, blank=True)
 
     class Meta:
