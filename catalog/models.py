@@ -70,6 +70,7 @@ class Book(models.Model):
                             unique=True,
                             help_text='13 Character <a href="https://www.isbn-international.org/content/what-isbn'
                                       '">ISBN number</a>')
+    language = models.ForeignKey('Language', on_delete=models.RESTRICT, null=True)
 
     # ManyToManyField used because genre can contain many books. Books can cover many genres.
     # Genre class has already been defined so we can specify the object above.
