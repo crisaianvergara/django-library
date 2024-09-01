@@ -1,9 +1,10 @@
 from django.shortcuts import render
+from django.views import generic
 
 from .models import Book, Author, BookInstance, Genre
 
 
-# Create your views here.
+# View (function-based)
 def index(request):
     """View function for home page of site."""
 
@@ -31,3 +32,20 @@ def index(request):
 
     # Render the HTML template index.html with the date in the context variable.
     return render(request, 'index.html', context=context)
+
+
+class BookListView(generic.ListView):
+    model = Book
+    paginate_by = 2
+
+
+class BookDetailView(generic.DetailView):
+    model = Book
+
+
+class AuthorListView(generic.ListView):
+    model = Author
+
+
+class AuthorDetailView(generic.DetailView):
+    model = Author
